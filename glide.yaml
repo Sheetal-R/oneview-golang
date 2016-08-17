@@ -1,5 +1,5 @@
-package: github.com/HewlettPackard/oneview-golang
-homepage: https://github.com/HewlettPackard/oneview-golang
+package: github.com/Sheetal-R/oneview-golang
+homepage: https://github.com/Sheetal-R/oneview-golang
 import:
 - package: github.com/docker/machine
   version: "~0.8"

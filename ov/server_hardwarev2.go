@@ -20,8 +20,8 @@ package ov
 import (
 	"strings"
 
-	"github.com/HewlettPackard/oneview-golang/liboneview"
-	"github.com/HewlettPackard/oneview-golang/utils"
+	"github.com/Sheetal-R/oneview-golang/liboneview"
+	"github.com/Sheetal-R/oneview-golang/utils"
 	"github.com/docker/machine/libmachine/log"
 )
 

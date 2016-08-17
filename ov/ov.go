@@ -21,7 +21,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/HewlettPackard/oneview-golang/rest"
+	"github.com/Sheetal-R/oneview-golang/rest"
 	"github.com/docker/machine/libmachine/log"
 )
 

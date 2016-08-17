@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/HewlettPackard/oneview-golang/utils"
+	"github.com/Sheetal-R/oneview-golang/utils"
 	"github.com/docker/machine/libmachine/log"
 	"github.com/stretchr/testify/assert"
 )

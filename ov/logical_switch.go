@@ -1,7 +1,7 @@
 package ov
 
 import (
-	"github.com/HewlettPackard/oneview-golang/utils"
+	"github.com/Sheetal-R/oneview-golang/utils"
 )
 
 type LogicalSwitch struct {

@@ -21,8 +21,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/HewlettPackard/oneview-golang/liboneview"
-	"github.com/HewlettPackard/oneview-golang/rest"
+	"github.com/Sheetal-R/oneview-golang/liboneview"
+	"github.com/Sheetal-R/oneview-golang/rest"
 	"github.com/docker/machine/libmachine/log"
 )
 

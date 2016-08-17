@@ -21,8 +21,8 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/HewlettPackard/oneview-golang/rest"
-	"github.com/HewlettPackard/oneview-golang/utils"
+	"github.com/Sheetal-R/oneview-golang/rest"
+	"github.com/Sheetal-R/oneview-golang/utils"
 	"github.com/docker/machine/libmachine/log"
 )
 

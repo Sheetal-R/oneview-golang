@@ -23,6 +23,8 @@ import "strings"
 const (
 	Ver1    = 228 // OV api version (120) + ICSP api version (108)
 	Ver2    = 308 // OV api version (200) + ICSP api version (108)
+        Ver2_1  = 309 // OV api version (201) + ICSP api version (108)
+        Ver3    = 408 // OV api version (300) + ICSP api version (108)
 	Unknown = -1
 )
 
@@ -33,6 +35,8 @@ type Version int
 const (
 	API_VER1        Version = Ver1
 	API_VER2        Version = Ver2
+        API_VER2_1      Version = Ver2_1
+        API_VER3        Version = Ver3
 	API_VER_UNKNOWN Version = Unknown
 )
 
@@ -40,6 +44,8 @@ const (
 var verstringlist = [...]string{
 	"HP OneView 120,HP ICSP 108",
 	"HP OneView 200,HP ICSP 108",
+        "HP OneView 201,HP ICSP 108",
+        "HP OneView 300,HP ICSP 108",
 	"Unknown",
 }
 
@@ -47,6 +53,8 @@ var verstringlist = [...]string{
 var verintlist = [...]int{
 	Ver1,
 	Ver2,
+        Ver2_1,
+        Ver3,
 	Unknown,
 }
 
@@ -77,6 +85,8 @@ func init() {
 	validVersion = map[int]bool{
 		Ver1: true,
 		Ver2: true,
+                Ver2_1:true,
+                Ver3: true,
 	}
 }
 

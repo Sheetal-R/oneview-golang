@@ -66,7 +66,7 @@ func (o APISupport) IsSupported(v Version) bool {
 	case C_SERVER_HARDWAREV2:
 		return API_VER2 == v
 	case C_PROFILE_TEMPLATES:
-		return API_VER2 == v
+		return (API_VER2 == v || API_VER2_1 == v || API_VER3 == v)
 	default:
 		return true
 	}
