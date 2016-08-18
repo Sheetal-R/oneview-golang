@@ -1,7 +1,7 @@
 # Project name, used to name the binaries
 PKG_NAME := oneview-golang
 # Github infos
-GH_USER ?= HewlettPackard
+GH_USER ?= Sheetal-R
 GH_REPO ?= oneview-golang
 
 # If true, disable optimizations and does NOT strip the binary
