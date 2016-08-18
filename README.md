@@ -29,7 +29,7 @@ USE_CONTAINER=false make test
 
 ## Contributing
 
-Want to hack on oneview-golang? Please start with the [Contributing Guide](https://github.com/HewlettPackard/docker-machine-oneview/blob/master/CONTRIBUTING.md).
+Want to hack on oneview-golang? Please start with the [Contributing Guide](https://github.com/Sheetal-R/docker-machine-oneview/blob/master/CONTRIBUTING.md).
 
 This code base is primarily consumed and used by the docker-machine-oneview project.  We will follow contribution standards set by this project.
 
