@@ -176,6 +176,7 @@ func (c *ICSPClient) PreApplyDeploymentJobs(s Server, publicinterface Interface)
 // CustomizeServer - Customize Server
 func (c *ICSPClient) CustomizeServer(cs CustomizeServer) error {
 	s, err := c.GetServerBySerialNumber(cs.SerialNumber)
+        log.Infof("inside icsp.go and in Customize func, %s.", err)
 	if err != nil {
 		return err
 	}

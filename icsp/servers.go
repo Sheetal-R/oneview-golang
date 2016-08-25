@@ -435,8 +435,11 @@ func (c *ICSPClient) CreateServer(user string, pass string, ip string, port int)
 
 	var sc ServerCreate
 	sc = sc.NewServerCreate(user, pass, ip, port)
+        log.Infof("Inside server.go and in calling NewServerCreate, %s.", sc)
+
 
 	jt, err := c.SubmitNewServer(sc)
+        log.Infof("Inside the server.go and in CreateServer func, %s.", jt)
 	if err != nil {
 		return err
 	}
