@@ -1,0 +1,62 @@
+rm -f .proxy.docker.env
+# generate a
+printf 'ENV https_proxy %s\nENV http_proxy %s\nENV no_proxy %s\n'  'web-proxy.cup.hp.com:8080' 'web-proxy.cup.hp.com:8080' '/var/run/docker.sock,hpe.com,hpecorp.net,localhost,127.0.0.1,10.187.0.113,10.187.0.115,10.187.0.11,10.187.0.118,10.187.0.*' > .proxy.docker.env
+# get the dockerfile.machine from github.com/docker/machine
+curl -s file:///root/gitData/oneview-golang/Dockerfile > .dockerfile.oneview
+echo 'setup proxy for .dockerfile.oneview'
+setup proxy for .dockerfile.oneview
+sed "/FROM.*/ r .proxy.docker.env" .dockerfile.oneview > .dockerfile.oneview.t && mv .dockerfile.oneview.t .dockerfile.oneview
+export GO15VENDOREXPERIMENT=1
+docker build -f .dockerfile.oneview -t "oneview-golang-build" .
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 1.114 MBSending build context to Docker daemon 1.671 MBSending build context to Docker daemon 2.228 MBSending build context to Docker daemon 2.785 MBSending build context to Docker daemon 3.342 MBSending build context to Docker daemon 3.899 MBSending build context to Docker daemon 4.456 MBSending build context to Docker daemon 5.014 MBSending build context to Docker daemon 5.571 MBSending build context to Docker daemon 6.128 MBSending build context to Docker daemon 6.685 MBSending build context to Docker daemon 7.242 MBSending build context to Docker daemon 7.799 MBSending build context to Docker daemon 8.356 MBSending build context to Docker daemon 8.913 MBSending build context to Docker daemon  9.47 MBSending build context to Docker daemon 10.03 MBSending build context to Docker daemon 10.58 MBSending build context to Docker daemon 11.14 MBSending build context to Docker daemon  11.7 MBSending build context to Docker daemon 12.26 MBSending build context to Docker daemon 12.81 MBSending build context to Docker daemon 13.37 MBSending build context to Docker daemon 13.93 MBSending build context to Docker daemon 14.48 MBSending build context to Docker daemon 15.04 MBSending build context to Docker daemon  15.6 MBSending build context to Docker daemon 16.15 MBSending build context to Docker daemon 16.71 MBSending build context to Docker daemon 17.27 MBSending build context to Docker daemon 17.83 MBSending build context to Docker daemon 18.38 MBSending build context to Docker daemon 18.94 MBSending build context to Docker daemon  19.5 MBSending build context to Docker daemon 20.05 MBSending build context to Docker daemon 20.12 MB
+Step 1 : FROM golang:1.6.2
+ ---> 8ecba0e9bd48
+Step 2 : ENV https_proxy web-proxy.cup.hp.com:8080
+ ---> Using cache
+ ---> a4cb582739bb
+Step 3 : ENV http_proxy web-proxy.cup.hp.com:8080
+ ---> Using cache
+ ---> dc6a76be768b
+Step 4 : ENV no_proxy /var/run/docker.sock,hpe.com,hpecorp.net,localhost,127.0.0.1,10.187.0.113,10.187.0.115,10.187.0.11,10.187.0.118,10.187.0.*
+ ---> Using cache
+ ---> 11e41422f6f8
+Step 5 : RUN go get  github.com/golang/lint/golint             github.com/mattn/goveralls             golang.org/x/tools/cover             github.com/tools/godep             github.com/aktau/github-release
+ ---> Using cache
+ ---> 1028fd880e7f
+Step 6 : ENV USER root
+ ---> Using cache
+ ---> 913ce06d8c66
+Step 7 : WORKDIR /go/src/github.com/Sheetal-R/oneview-golang
+ ---> Using cache
+ ---> a1b40bb2d161
+Step 8 : COPY . /go/src/github.com/Sheetal-R/oneview-golang
+ ---> b535ac324bba
+Removing intermediate container fb988119db25
+Step 9 : RUN mkdir bin
+ ---> Running in 769a7ee36f67
+ ---> d864f0828c92
+Removing intermediate container 769a7ee36f67
+Successfully built d864f0828c92
+test -z 'd8ceea2770a9        oneview-golang-build   "make clean"        2 minutes ago       Exited (0) 2 minutes ago                        oneview-golang-build-container' || docker rm -f oneview-golang-build-container
+oneview-golang-build-container
+docker run --name oneview-golang-build-container \
+	    -e DEBUG \
+	    -e STATIC \
+	    -e VERBOSE \
+	    -e BUILDTAGS \
+	    -e PARALLEL \
+	    -e COVERAGE_DIR \
+	    -e TARGET_OS \
+	    -e TARGET_ARCH \
+	    -e PREFIX \
+	    -e GO15VENDOREXPERIMENT \
+	    -e TEST_RUN \
+	    -e ONEVIEW_DEBUG \
+	    -e GH_USER \
+	    -e GH_REPO \
+	    -e USE_CONTAINER=false \
+	    "oneview-golang-build" \
+	    make clean
+[ -z "" ] || rm -f ;
+echo "working on clean"
+working on clean
